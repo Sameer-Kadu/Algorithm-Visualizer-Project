@@ -1,2 +1,2 @@
 # Algorithm-Visualizer-Project
-Algorithm Visualizer Project first
+The Algorithm Visualizer Project 
