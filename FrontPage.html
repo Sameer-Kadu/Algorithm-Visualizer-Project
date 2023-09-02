@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algorithm Visualizer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(37, 37, 37);
+        }
+
+        header {
+            background-color: rgb(32, 32, 32);
+            color: rgb(247, 247, 247);
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+        }
+
+        li {
+            margin: 10px;
+            font-size: 20px;
+        }
+
+        li a {
+            text-decoration: none;
+            color: #007acc;
+        }
+
+        li a:hover {
+            text-decoration: underline;
+        }
+
+        .algorithm-list {
+            display: none;
+        }
+
+        .highlighted {
+            background-color: rgb(248, 248, 0, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Algorithm Visualizer</h1>
+        <input type="text" id="searchInput" placeholder="Search for algorithms...">
+    </header>
+    <main>
+        <h2 style="color: white;">List of Algorithms</h2>
+        <ol id="algorithmCategories" style="color: white;">
+            <li onclick="toggleList('searchingList')">Searching Algorithms
+                <ul id="searchingList" class="algorithm-list">
+                    <li><a href="#">Binary Search</a></li>
+                    <li><a href="#">Linear Search</a></li>
+                    <li><a href="#">Depth First Search</a></li>
+                    <li><a href="#">Breadth First Search</a></li>
+                    <li><a href="#">Rabin-Karp Algorithm</a></li>
+                    <li><a href="#">Z Algorithm</a></li>
+                </ul>
+            </li>
+            <li onclick="toggleList('sortingList')">Sorting Algorithms
+                <ul id="sortingList" class="algorithm-list">
+                    <li><a href="#">Insertion Sort</a></li>
+                    <li><a href="#">Heap Sort </a></li>
+                    <li><a href="#">Selection Sort </a></li>
+                    <li><a href="#">Merge Sort </a></li>
+                    <li><a href="#">Quick Sort </a></li>
+                    <li><a href="#">Counting Sort</a></li>
+                    <li><a href="#">Bucket Sort</a></li>
+                    <li><a href="#">Bubble Sort</a></li>
+                    <li><a href="#">Radix Sort</a></li>
+                    <li><a href="#">Shell Sort</a></li>
+                    <li><a href="#">Comb Sort</a></li>
+                    <li><a href="#">Pigeonhole Sort</a></li>
+                    <li><a href="#">Cycle Sort</a></li>
+                </ul>
+            </li>
+            <li onclick="toggleList('graphList')">Graphs Algorithms
+                <ul id="graphList" class="algorithm-list">
+                    <li><a href="#">Kruskal's Algorithm</a></li>
+                    <li><a href="#">Dijkstra's Algorithm</a></li>
+                    <li><a href="#">Bellman Ford Algorithm</a></li>
+                    <li><a href="#">Floyd Warshall Algorithm</a></li>
+                    <li><a href="#">Topological Sort Algorithm</a></li>
+                    <li><a href="#">Flood Fill Algorithm</a></li>
+                    <li><a href="#">Lee Algorithm</a></li>
+                    <li><a href="#">Prim's Algorithm</a></li>
+                    <li><a href="#">Boruvka's Algorithm</a></li>
+                    <li><a href="#">Johnson's Algorithm</a></li>
+                    <li><a href="#">Kosaraju's Algorithm</a></li>
+                    <li><a href="#">Tarjan's Algorithm</a></li>
+                </ul>
+            </li>
+            <li onclick="toggleList('arrayList')">Array Algorithms
+                <ul id="arrayList" class="algorithm-list">
+                    <li><a href="#">Kadane's Algorithm</a></li>
+                    <li><a href="#">Floyd's Cycle Detection Algorithm</a></li>
+                    <li><a href="#">Knuth-Morris-Pratt Algorithm (KMP)</a></li>
+                    <li><a href="#">Quick Select Algorithm</a></li>
+                    <li><a href="#">Boyer - Moore Majority Vote Algorithm</a></li>
+                </ul>
+            </li>
+            <li onclick="toggleList('treeList')">Tree Algorithms
+                <ul id="treeList" class="algorithm-list">
+                    <li><a href="#">AA Tree</a></li>
+                    <li><a href="#">Binary Indexed Tree or Fenwick Tree</a></li>
+                    <li><a href="#">Quadtree</a></li>
+                    <li><a href="#">Cartesian Tree</a></li>
+                    <li><a href="#">Fibonacci Heap</a></li>
+                    <li><a href="#">Interval Tree</a></li>
+                    <li><a href="#">Finger Tree</a></li>
+                    <li><a href="#">Crit-bit Trees</a></li>
+                    <li><a href="#">Scapegoat Tree</a></li>
+                    <li><a href="#">Splay Tree</a></li>
+                    <li><a href="#">Suffix Tree</a></li>
+                    <li><a href="#">Counted B-Trees</a></li>
+                    <li><a href="#">Binary Space Partitioning</a></li>
+                    <li><a href="#">Van Emde Boas Tree</a></li>
+                </ul>
+            </li>
+            <li onclick="toggleList('otherList')">Other Algorithms
+                <ul id="otherList" class="algorithm-list">
+                    <li><a href="#">Huffman Coding Compression Algorithm</a></li>
+                    <li><a href="#">Euclid's Algorithm</a></li>
+                    <li><a href="#">Union Find Algorithm</a></li>
+                    <li><a href="#">Manacher's Algorithm</a></li>
+                    <li><a href="#">Eulerian Path (Hierholzer's Algorithm)</a></li>
+                    <li><a href="#">Convex Hull | Set 1 (Jarvis's Algorithm or Wrapping)</a></li>
+                    <li><a href="#">Convex Hull | Set 2 (Graham Scan)</a></li>
+                    <li><a href="#">Convex Hull using Divide and Conquer Algorithm</a></li>
+                    <li><a href="#">Quickhull Algorithm for Convex Hull</a></li>
+                    <li><a href="#">Distinct elements in subarray using Mo's Algorithm</a></li>
+                    <li><a href="#">Line Sweep Algorithm</a></li>
+                    <li><a href="#">MO's Algorithm (Query square root decomposition)</a></li>
+                    <li><a href="#">Disjoint-set Data Structure</a></li>
+                    <li><a href="#">Ackermann Function</a></li>
+                    <li><a href="#">Zobrist Hashing</a></li>
+                    <li><a href="#">FM-index</a></li>
+                    <li><a href="#">Circular buffer</a></li>
+                    <li><a href="#">Hungarian Algorithm / Kuhn-Munkres Algorithm / Munkres Assignment Algorithm</a></li>
+                    <li><a href="#">Dekker's Algorithm</a></li>
+                    <li><a href="#">Winged Edge</a></li>
+                    <li><a href="#">Burrows-Wheeler Transform</a></li>
+                    <li><a href="#">Zipper</a></li>
+                    <li><a href="#">Five Balltree Construction Algorithms</a></li>
+                    <li><a href="#">Cuckoo Hashing</a></li>
+                    <li><a href="#">Rope (Data Structure)</a></li>
+                    <li><a href="#">Binary Decision Diagram</a></li>
+                    <li><a href="#">Disjoint-set Data Structure</a></li>
+                    <li><a href="#">Bloom Filter</a></li>
+                </ul>
+            </li>
+        </ol>
+    </main>
+    <script>
+
+        // Function to toggle the display of algorithm lists
+        function toggleList(listId) {
+            var list = document.getElementById(listId);
+            if (list.style.display === "none" || list.style.display === "") {
+                list.style.display = "block";
+            } else {
+                list.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>
